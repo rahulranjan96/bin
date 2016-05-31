@@ -5,24 +5,18 @@ int *temp=NULL;
 
 int func(int *a,int n,int m)
 {
-	int i=0;
+
 	if(temp[n]==-1){
+	    int i=0;
+            temp[n]=0;
    for(i=0;i<m;i++)
    {
    	if(n>=a[i])
    	{
-   		if(temp[n-a[i]]!=-1)
-   			temp[n]+=temp[n-a[i]];
-   		else {
-   			int k=func(a,n-a[i],m);
-   		     if(k!=-1)
-   		     	temp[n]+=k;
-   		 }
+   			temp[n]+=func(a,n-a[i],m);
    	}
    }
-   return temp[n];
-}
- else 
+   }
  	return temp[n];
 }
 
