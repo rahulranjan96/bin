@@ -2,6 +2,7 @@
 #include<stdlib.h>
 
 
+//Coded by Rahul Ranjan
 
 int main()
 {
@@ -29,3 +30,6 @@ int main()
     }
     return 0;
 }
+
+
+//Coded by Rahul Ranjan
