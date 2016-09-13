@@ -1,5 +1,5 @@
 
-#**********************************************************###
+########**********************************************************###
 
 """from nltk import *
 from nltk.corpus import stopwords
@@ -238,8 +238,8 @@ GPE - South East Asia, Midlothian
 
 
 """
-
 """
+
 
 import nltk
 #from nltk.tokenize import PunktSentenceTokenizer
@@ -255,15 +255,15 @@ def process_content():
   for i in array_sentTokenize:
    words=word_tokenize(i)
    tagged=nltk.pos_tag(words)
-   namedEnt=nltk.ne_chunk(tagged,binary=True)
+   namedEnt=nltk.ne_chunk(tagged)
    print(namedEnt)
  except Exception as e:
   print(str(e))
 
 process_content()
 
-
 """
+
 
 
 #########************************************###############
@@ -291,4 +291,53 @@ for i in words:
 
 
 ##########***************************************##############
+#########*****************WORD_NET**********###################
+
+
+"""
+from nltk.corpus import wordnet
+
+syns = wordnet.synsets("program")
+#synset
+print(syns[0].name())
+#just the word
+print(syns[0].lemmas()[0].name())
+#definition
+print(syns[0].definition())
+#examples
+print(syns[0].examples())
+"""
+
+
+"""from nltk.corpus import wordnet
+
+synonyms = []
+antonyms = []
+
+for syn in wordnet.synsets("good"):
+    for l in syn.lemmas():
+        synonyms.append(l.name())
+        if l.antonyms():
+            antonyms.append(l.antonyms()[0].name())
+
+print(set(synonyms))
+print(set(antonyms))    
+"""
+
+
+"""
+from nltk.corpus import wordnet
+
+w1=wordnet.synset("ship.n.01")
+w2=wordnet.synset("boat.n.01")
+
+print(w1.wup_similarity(w2))
+
+"""
+
+##########**********************************************************
+
+
+####*******************Text Classification******************########
+
 
